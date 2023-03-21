@@ -2,7 +2,7 @@
 
 This is a brief guide to checking out, building, and debugging FreeCAD on macOS tested on Apple Silicon using Visual Studio Code and Conda to provide a consistent development environment.
 
-![YouTube Walk-Through](https://youtu.be/2ujlBmywx5g)
+[![YouTube Walk-Through](images/youtube-thumbnail.png))](https://youtu.be/2ujlBmywx5g)
 
 ## Building FreeCAD
 
