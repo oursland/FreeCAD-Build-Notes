@@ -11,11 +11,18 @@ The video below is somewhat out of date as it:
 
 ## Building FreeCAD
 
-1. Install mamba
+1. Install mambaforge
 
-        brew install mambaforge
-        conda init "$(basename "${SHELL}")"
-        source ~/.zshrc
+    * Linux
+
+            curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+            bash Mambaforge-$(uname)-$(uname -m).sh
+
+    * macOS
+
+            brew install mambaforge
+            conda init "$(basename "${SHELL}")"
+            source ~/.zshrc
 
 2. Clone FreeCAD
 
@@ -54,9 +61,10 @@ The video below is somewhat out of date as it:
 
 ## Running and Debugging FreeCAD
 
-Visual Studio Code has been configured with two debug configurations:
+Visual Studio Code has been configured with three debug configurations:
 
-* `C/C++: clang++ build and debug FreeCAD`
+* `C/C++: Linux: build and debug FreeCAD` (uses gdb for Linux users)
+* `C/C++: macOS: build and debug FreeCAD` (uses lldb for macOS users)
 * `Python: Remote Attach`
 
 ![Debug Contexts](images/debug-contexts.png)
