@@ -13,13 +13,13 @@ The video below is somewhat out of date as it:
 
 1. Install mamba
 
-        brew install cmake ninja mambaforge
+        brew install mambaforge
         conda init "$(basename "${SHELL}")"
         source ~/.zshrc
 
 2. Clone FreeCAD
 
-        git clone https://github.com/oursland/FreeCAD.git -b conda-env
+        git clone https://github.com/oursland/FreeCAD.git -b conda-devenv
 
 3. Install conda environment for FreeCAD
 
