@@ -1,6 +1,11 @@
-# FreeCAD macOS (Apple Silicon) Build Notes
+# FreeCAD Build Notes
 
 This is a brief guide to checking out, building, and debugging FreeCAD on macOS tested on Apple Silicon using Visual Studio Code and Conda to provide a consistent development environment.
+
+The video below is somewhat out of date as it:
+
+* builds netgen manually, which is not necessary
+* does not call `conda devenv ...` to set up the environment's packages
 
 [![YouTube Walk-Through](images/youtube-thumbnail.png)](https://youtu.be/2ujlBmywx5g)
 
@@ -20,21 +25,13 @@ This is a brief guide to checking out, building, and debugging FreeCAD on macOS 
 
         cd FreeCAD
         conda env create -p .conda/freecad -f .vscode/conda-env.yaml
+        conda config --add envs_dirs $CONDA_PREFIX/envs
         conda config --add envs_dirs $(pwd)/.conda
         conda config --set env_prompt '({name})'
-        source activate freecad
+        conda activate freecad
+        conda devenv -f .vscode/environment.devenv.yml
 
-4. Install netgen
-
-    The current netgen is an older release that did not support Apple Silicon.  There is currently a [pull request](https://github.com/conda-forge/netgen-feedstock/pull/44) open to update to the latest release.  Until that pull request is merged in, we will need to install netgen from source.
-
-        cd ..
-        git clone https://github.com/oursland/netgen-feedstock.git -b personal/joursland/apple-silicon
-        cd netgen-feedstock
-        conda build .
-        conda install [built tarball]
-
-5. Open FreeCAD in VS Code
+4. Open FreeCAD in VS Code
 
         cd ..
         code FreeCAD
@@ -49,7 +46,7 @@ This is a brief guide to checking out, building, and debugging FreeCAD on macOS 
 
     This should now configure CMake to build FreeCAD.
 
-6. Build FreeCAD
+5. Build FreeCAD
 
     Use the `F7` key or run the `CMake: Build` command
 
