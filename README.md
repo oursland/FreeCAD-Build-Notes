@@ -24,12 +24,12 @@ The video below is somewhat out of date as it:
 3. Install conda environment for FreeCAD
 
         cd FreeCAD
-        conda env create -p .conda/freecad -f .vscode/conda-env.yaml
+        conda env create -p .conda/freecad -f conda/conda-env.yaml
         conda config --add envs_dirs $CONDA_PREFIX/envs
         conda config --add envs_dirs $(pwd)/.conda
         conda config --set env_prompt '({name})'
         conda activate freecad
-        conda devenv -f .vscode/environment.devenv.yml
+        conda devenv -f conda/environment.devenv.yml
 
 4. Open FreeCAD in VS Code
 
