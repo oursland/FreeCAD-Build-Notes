@@ -26,7 +26,7 @@ The video below is somewhat out of date as it:
 
 2. Clone FreeCAD
 
-        git clone https://github.com/oursland/FreeCAD.git -b conda-devenv
+        git clone https://github.com/FreeCAD/FreeCAD.git
 
 3. Install conda environment for FreeCAD
 
